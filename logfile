@@ -1,0 +1,775 @@
+���������:  ������� �� ���� ���������: 2020-01-06 22:26:22 MSK
+���������:  ������ �� ������������ ���������������� ������ ��������
+���������:  ������� �� ������ ��������� �����������
+���������:  ������� ������� ����������� ������
+���������:  ������� ������ �� ������� ����������
+���������:  ���������� ���� �������� ����������
+���������:  ������� ������� ����������� �����������
+���������:  ����������
+���������:  ������� �� ���������
+���������:  ������� �� ���� ���������: 2020-01-06 23:11:11 MSK
+���������:  ������ �� ������������ ���������������� ������ ��������
+���������:  ������� �� ������ ��������� �����������
+���������:  ������� ������� ����������� ������
+ОШИБКА:  функция public.uuid_generate_v1() не существует
+ПОДСКАЗКА:  Функция с данными именем и типами аргументов не найдена. Возможно, вам следует добавить явные приведения типов.
+ОПЕРАТОР:  CREATE TABLE public.zk (
+	    lastname character varying(20),
+	    name character varying(10),
+	    mid_name character varying(20),
+	    birth_date date,
+	    reg_city character varying(20),
+	    reg_street character varying(20),
+	    reg_home character varying(5),
+	    reg_corp character varying(5),
+	    reg_flat character varying(5),
+	    liv_city character varying(20),
+	    liv_street character varying(20),
+	    liv_home character varying(5),
+	    liv_corp character varying(5),
+	    liv_flat character varying(5),
+	    dop_info character varying(150),
+	    check_for character varying(25),
+	    zk_id integer NOT NULL,
+	    date_upd character varying(20),
+	    date_add date,
+	    time_add character varying(10),
+	    linked_id character varying(50),
+	    row_id uuid DEFAULT public.uuid_generate_v1()
+	);
+ОШИБКА:  отношение "public.zk" не существует
+ОПЕРАТОР:  ALTER TABLE public.zk OWNER TO postgres;
+ОШИБКА:  отношение "public.zk" не существует (символ 99)
+ОПЕРАТОР:  CREATE VIEW public.customer_golutvin AS
+	 SELECT zk.lastname,
+	    zk.name,
+	    zk.mid_name
+	   FROM public.zk
+	  WHERE ((zk.reg_city)::text = 'Москва'::text);
+ОШИБКА:  отношение "public.customer_golutvin" не существует
+ОПЕРАТОР:  ALTER TABLE public.customer_golutvin OWNER TO postgres;
+ОШИБКА:  отношение "public.zk" не существует
+ОПЕРАТОР:  ALTER SEQUENCE public.zk_zk_id_seq OWNED BY public.zk.zk_id;
+ОШИБКА:  отношение "public.zk" не существует
+ОПЕРАТОР:  ALTER TABLE ONLY public.zk ALTER COLUMN zk_id SET DEFAULT nextval('public.zk_zk_id_seq'::regclass);
+ОШИБКА:  отношение "public.zk" не существует (символ 13)
+ОПЕРАТОР:  INSERT INTO public.zk (lastname, name, mid_name, birth_date, reg_city, reg_street, reg_home, reg_corp, reg_flat, liv_city, liv_street, liv_home, liv_corp, liv_flat, dop_info, check_for, zk_id, date_upd, date_add, time_add, linked_id, row_id) VALUES ('Семибратченко', 'Всеволод', 'Максимович', NULL, '', '', '', '', '', '', '', '', '', '', '', '', 10, '2019-11-24 22:05:05', NULL, NULL, NULL, 'ed5ec604-d717-11e9-9deb-9bb3d31e1f21');
+ОШИБКА:  отношение "public.zk" не существует (символ 13)
+ОПЕРАТОР:  INSERT INTO public.zk (lastname, name, mid_name, birth_date, reg_city, reg_street, reg_home, reg_corp, reg_flat, liv_city, liv_street, liv_home, liv_corp, liv_flat, dop_info, check_for, zk_id, date_upd, date_add, time_add, linked_id, row_id) VALUES ('Кузьмин', 'Леонтий', 'Игнатович', NULL, '', '', '', '', '', '', '', '', '', '', '', '', 8, '2019-11-25 22:38:11', NULL, NULL, NULL, 'e865532a-d717-11e9-9de9-e790330d43c1');
+ОШИБКА:  отношение "public.zk" не существует (символ 13)
+ОПЕРАТОР:  INSERT INTO public.zk (lastname, name, mid_name, birth_date, reg_city, reg_street, reg_home, reg_corp, reg_flat, liv_city, liv_street, liv_home, liv_corp, liv_flat, dop_info, check_for, zk_id, date_upd, date_add, time_add, linked_id, row_id) VALUES ('Ivanov', 'Иван', 'Иванович', NULL, 'Москва', 'Улица улица', '1', '2', '3', NULL, NULL, NULL, NULL, NULL, 'OLD доп инфо
+	доп инфо 2; Кат.:Категория; Дат: 1.2.2017; Мест:Место хранения; Кем: Кем изъята; Прич:Причина;, Кличка:Кличка', NULL, 203, NULL, NULL, NULL, NULL, '8053769a-11eb-11ea-8e0c-377b3fdfa04b');
+ОШИБКА:  отношение "public.zk" не существует (символ 13)
+ОПЕРАТОР:  INSERT INTO public.zk (lastname, name, mid_name, birth_date, reg_city, reg_street, reg_home, reg_corp, reg_flat, liv_city, liv_street, liv_home, liv_corp, liv_flat, dop_info, check_for, zk_id, date_upd, date_add, time_add, linked_id, row_id) VALUES ('Друг 1', 'Имя 1', 'О1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Кличка: Вован', NULL, 204, NULL, NULL, NULL, NULL, '805412f8-11eb-11ea-8e0d-2fb6ea80eccd');
+ОШИБКА:  отношение "public.zk" не существует (символ 13)
+ОПЕРАТОР:  INSERT INTO public.zk (lastname, name, mid_name, birth_date, reg_city, reg_street, reg_home, reg_corp, reg_flat, liv_city, liv_street, liv_home, liv_corp, liv_flat, dop_info, check_for, zk_id, date_upd, date_add, time_add, linked_id, row_id) VALUES ('Друг два', 'Имя2', 'О2', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Кличка: ', NULL, 205, NULL, NULL, NULL, NULL, '80543a12-11eb-11ea-8e0e-bbd46ad1f367');
+ОШИБКА:  отношение "public.zk" не существует (символ 13)
+ОПЕРАТОР:  INSERT INTO public.zk (lastname, name, mid_name, birth_date, reg_city, reg_street, reg_home, reg_corp, reg_flat, liv_city, liv_street, liv_home, liv_corp, liv_flat, dop_info, check_for, zk_id, date_upd, date_add, time_add, linked_id, row_id) VALUES ('abonent1', 'ima 1', 'o1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Кличка: klich-1', NULL, 207, NULL, NULL, NULL, NULL, '879e33fe-11eb-11ea-8e14-c74a9df3678a');
+ОШИБКА:  отношение "public.zk" не существует (символ 13)
+ОПЕРАТОР:  INSERT INTO public.zk (lastname, name, mid_name, birth_date, reg_city, reg_street, reg_home, reg_corp, reg_flat, liv_city, liv_street, liv_home, liv_corp, liv_flat, dop_info, check_for, zk_id, date_upd, date_add, time_add, linked_id, row_id) VALUES ('Котова', 'Анна', NULL, NULL, 'Москва', NULL, NULL, '1', '3', NULL, NULL, NULL, NULL, NULL, 'OLD ; Кат.:; Дат: 2019-09-08 время; Мест:; Кем: Кем изъята; Прич:;, Кличка:', NULL, 208, NULL, NULL, NULL, NULL, '94f4bc30-11eb-11ea-8e15-fbb6baeae5e7');
+ОШИБКА:  отношение "public.zk" не существует (символ 13)
+ОПЕРАТОР:  INSERT INTO public.zk (lastname, name, mid_name, birth_date, reg_city, reg_street, reg_home, reg_corp, reg_flat, liv_city, liv_street, liv_home, liv_corp, liv_flat, dop_info, check_for, zk_id, date_upd, date_add, time_add, linked_id, row_id) VALUES (NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Кличка: ', NULL, 209, NULL, NULL, NULL, NULL, '94f50a82-11eb-11ea-8e16-73f5f43d6beb');
+ОШИБКА:  отношение "public.zk" не существует (символ 13)
+ОПЕРАТОР:  INSERT INTO public.zk (lastname, name, mid_name, birth_date, reg_city, reg_street, reg_home, reg_corp, reg_flat, liv_city, liv_street, liv_home, liv_corp, liv_flat, dop_info, check_for, zk_id, date_upd, date_add, time_add, linked_id, row_id) VALUES ('Постников', 'Виталий', 'Михайлович', NULL, 'Москва', 'Ул', '1', '2', 'Кв 3', NULL, NULL, NULL, NULL, NULL, 'OLD доцент ктн по доп.инф.; Кат.:; Дат: 5.10.2019; Мест:Архив; Кем: ; Прич:;, Кличка:', NULL, 210, NULL, NULL, NULL, NULL, '9966982e-11eb-11ea-8e17-bf6bbdc9cc76');
+ОШИБКА:  отношение "public.zk" не существует (символ 13)
+ОПЕРАТОР:  INSERT INTO public.zk (lastname, name, mid_name, birth_date, reg_city, reg_street, reg_home, reg_corp, reg_flat, liv_city, liv_street, liv_home, liv_corp, liv_flat, dop_info, check_for, zk_id, date_upd, date_add, time_add, linked_id, row_id) VALUES ('Виноградова', 'Мария', 'Валерьевна', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Кличка: Маша', NULL, 211, NULL, NULL, NULL, NULL, '9966e66c-11eb-11ea-8e18-a7f0a6642d9e');
+ОШИБКА:  отношение "public.zk" не существует (символ 13)
+ОПЕРАТОР:  INSERT INTO public.zk (lastname, name, mid_name, birth_date, reg_city, reg_street, reg_home, reg_corp, reg_flat, liv_city, liv_street, liv_home, liv_corp, liv_flat, dop_info, check_for, zk_id, date_upd, date_add, time_add, linked_id, row_id) VALUES ('Булатова', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Кличка: ', NULL, 212, NULL, NULL, NULL, NULL, '99673496-11eb-11ea-8e19-2f370bd630ba');
+ОШИБКА:  отношение "public.zk" не существует (символ 13)
+ОПЕРАТОР:  INSERT INTO public.zk (lastname, name, mid_name, birth_date, reg_city, reg_street, reg_home, reg_corp, reg_flat, liv_city, liv_street, liv_home, liv_corp, liv_flat, dop_info, check_for, zk_id, date_upd, date_add, time_add, linked_id, row_id) VALUES ('Житенев', 'Владислав', 'Германович', '1997-10-23', '', '', '', '', '', '', '', '', '', '', '', '', 26, '2019-11-27 00:05:33', '2019-08-27', '18:47:08', NULL, 'fd93dfbe-d717-11e9-9df1-1f9a79a5c2ac');
+ОШИБКА:  отношение "public.zk" не существует (символ 13)
+ОПЕРАТОР:  INSERT INTO public.zk (lastname, name, mid_name, birth_date, reg_city, reg_street, reg_home, reg_corp, reg_flat, liv_city, liv_street, liv_home, liv_corp, liv_flat, dop_info, check_for, zk_id, date_upd, date_add, time_add, linked_id, row_id) VALUES ('Спиридонов', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Кличка: ', NULL, 213, NULL, NULL, NULL, NULL, '99675c0a-11eb-11ea-8e1a-978376d24b4c');
+ОШИБКА:  отношение "public.zk" не существует (символ 13)
+ОПЕРАТОР:  INSERT INTO public.zk (lastname, name, mid_name, birth_date, reg_city, reg_street, reg_home, reg_corp, reg_flat, liv_city, liv_street, liv_home, liv_corp, liv_flat, dop_info, check_for, zk_id, date_upd, date_add, time_add, linked_id, row_id) VALUES ('Афанасьев', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Кличка: ', NULL, 214, NULL, NULL, NULL, NULL, '99678324-11eb-11ea-8e1b-1fb46aeb3977');
+ОШИБКА:  отношение "public.zk" не существует (символ 13)
+ОПЕРАТОР:  INSERT INTO public.zk (lastname, name, mid_name, birth_date, reg_city, reg_street, reg_home, reg_corp, reg_flat, liv_city, liv_street, liv_home, liv_corp, liv_flat, dop_info, check_for, zk_id, date_upd, date_add, time_add, linked_id, row_id) VALUES ('Житенев', 'Владислав', 'Германович', '1997-10-23', '', '', '', '', '', '', '', '', '', '', '', '', 64, '2019-11-25 02:52:54', '2015-10-15', '12:55:14', NULL, '5897804a-e6e6-11e9-bf86-ff9df17305f6');
+ОШИБКА:  отношение "public.zk" не существует (символ 13)
+ОПЕРАТОР:  INSERT INTO public.zk (lastname, name, mid_name, birth_date, reg_city, reg_street, reg_home, reg_corp, reg_flat, liv_city, liv_street, liv_home, liv_corp, liv_flat, dop_info, check_for, zk_id, date_upd, date_add, time_add, linked_id, row_id) VALUES ('Ковалева', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Кличка: ', NULL, 215, NULL, NULL, NULL, NULL, '9967d158-11eb-11ea-8e1c-d74c108236a6');
+ОШИБКА:  отношение "public.zk" не существует (символ 13)
+ОПЕРАТОР:  INSERT INTO public.zk (lastname, name, mid_name, birth_date, reg_city, reg_street, reg_home, reg_corp, reg_flat, liv_city, liv_street, liv_home, liv_corp, liv_flat, dop_info, check_for, zk_id, date_upd, date_add, time_add, linked_id, row_id) VALUES ('Житенев', 'Владислав', 'Германович', '1997-10-23', '', '', '', '', '', '', '', '', '', '', '', '', 45, '2019-11-25 02:53:32', NULL, NULL, ',30', '0cb1e770-d718-11e9-9df5-43e111a9c351');
+ОШИБКА:  отношение "public.zk" не существует (символ 13)
+ОПЕРАТОР:  INSERT INTO public.zk (lastname, name, mid_name, birth_date, reg_city, reg_street, reg_home, reg_corp, reg_flat, liv_city, liv_street, liv_home, liv_corp, liv_flat, dop_info, check_for, zk_id, date_upd, date_add, time_add, linked_id, row_id) VALUES ('Силантьева', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Кличка: ', NULL, 216, NULL, NULL, NULL, NULL, '9967f804-11eb-11ea-8e1d-eb92f296e5ce');
+ОШИБКА:  отношение "public.zk" не существует (символ 13)
+ОПЕРАТОР:  INSERT INTO public.zk (lastname, name, mid_name, birth_date, reg_city, reg_street, reg_home, reg_corp, reg_flat, liv_city, liv_street, liv_home, liv_corp, liv_flat, dop_info, check_for, zk_id, date_upd, date_add, time_add, linked_id, row_id) VALUES ('Масленников', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Кличка: ', NULL, 217, NULL, NULL, NULL, NULL, '99681f3c-11eb-11ea-8e1e-ab5985ec18d3');
+ОШИБКА:  отношение "public.zk" не существует (символ 13)
+ОПЕРАТОР:  INSERT INTO public.zk (lastname, name, mid_name, birth_date, reg_city, reg_street, reg_home, reg_corp, reg_flat, liv_city, liv_street, liv_home, liv_corp, liv_flat, dop_info, check_for, zk_id, date_upd, date_add, time_add, linked_id, row_id) VALUES ('Терехов', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Кличка: ', NULL, 218, NULL, NULL, NULL, NULL, '99684638-11eb-11ea-8e1f-9f7cd7dbc43a');
+ОШИБКА:  отношение "public.zk" не существует (символ 13)
+ОПЕРАТОР:  INSERT INTO public.zk (lastname, name, mid_name, birth_date, reg_city, reg_street, reg_home, reg_corp, reg_flat, liv_city, liv_street, liv_home, liv_corp, liv_flat, dop_info, check_for, zk_id, date_upd, date_add, time_add, linked_id, row_id) VALUES ('Антонов', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Кличка: ', NULL, 219, NULL, NULL, NULL, NULL, '99686d7a-11eb-11ea-8e20-9fbc2caded06');
+ОШИБКА:  отношение "public.zk" не существует (символ 13)
+ОПЕРАТОР:  INSERT INTO public.zk (lastname, name, mid_name, birth_date, reg_city, reg_street, reg_home, reg_corp, reg_flat, liv_city, liv_street, liv_home, liv_corp, liv_flat, dop_info, check_for, zk_id, date_upd, date_add, time_add, linked_id, row_id) VALUES ('Шкатов', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Кличка: ', NULL, 220, NULL, NULL, NULL, NULL, '9968bb9a-11eb-11ea-8e21-772786bc50e3');
+ОШИБКА:  отношение "public.zk" не существует (символ 13)
+ОПЕРАТОР:  INSERT INTO public.zk (lastname, name, mid_name, birth_date, reg_city, reg_street, reg_home, reg_corp, reg_flat, liv_city, liv_street, liv_home, liv_corp, liv_flat, dop_info, check_for, zk_id, date_upd, date_add, time_add, linked_id, row_id) VALUES ('Семкин', 'Петр', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Кличка: Кличка', NULL, 221, NULL, NULL, NULL, NULL, '9968e336-11eb-11ea-8e22-370d9b7f24d1');
+ОШИБКА:  отношение "public.zk" не существует (символ 13)
+ОПЕРАТОР:  INSERT INTO public.zk (lastname, name, mid_name, birth_date, reg_city, reg_street, reg_home, reg_corp, reg_flat, liv_city, liv_street, liv_home, liv_corp, liv_flat, dop_info, check_for, zk_id, date_upd, date_add, time_add, linked_id, row_id) VALUES ('Ivanov', 'Ivan', 'Ivanovich', NULL, 'Mos', 'vlatisa', '11', '4', '239', '', '', '', '', '', 'OLD dop info
+	line 2; Кат.:kategory; Дат: 1.2.2003; Мест:mesto; Кем: kem; Прич:povod;, Кличка:koko', '', 206, '2019-11-28 17:31:34', NULL, NULL, NULL, '879e0c8a-11eb-11ea-8e13-eb11ead645bf');
+ОШИБКА:  отношение "public.zk" не существует (символ 13)
+ОПЕРАТОР:  INSERT INTO public.zk (lastname, name, mid_name, birth_date, reg_city, reg_street, reg_home, reg_corp, reg_flat, liv_city, liv_street, liv_home, liv_corp, liv_flat, dop_info, check_for, zk_id, date_upd, date_add, time_add, linked_id, row_id) VALUES ('Александрова', 'Ирина', 'Владимировна', NULL, 'DASD', '12', '5', '21', '42', 'DASD', '12', '5', '21', '42', '', '', 7, '2019-11-25 02:21:51', NULL, NULL, NULL, 'e5dfab8c-d717-11e9-9de8-0fa3c57c9326');
+ОШИБКА:  отношение "public.zk" не существует (символ 13)
+ОПЕРАТОР:  INSERT INTO public.zk (lastname, name, mid_name, birth_date, reg_city, reg_street, reg_home, reg_corp, reg_flat, liv_city, liv_street, liv_home, liv_corp, liv_flat, dop_info, check_for, zk_id, date_upd, date_add, time_add, linked_id, row_id) VALUES ('Васнецов', 'Олег', 'Иванович', NULL, '12', '', '', '', '', '', '', '', '', '', '', 'ФСКН', 11, '2019-11-28 04:28:59', NULL, NULL, NULL, 'f01ce452-d717-11e9-9dec-978f682c2e27');
+ОШИБКА:  отношение "public.zk" не существует
+ОПЕРАТОР:  ALTER TABLE ONLY public.zk
+	    ADD CONSTRAINT "PK_zk_id" PRIMARY KEY (zk_id);
+ОШИБКА:  отношение "public.zk" не существует
+ОПЕРАТОР:  ALTER TABLE ONLY public.zk
+	    ADD CONSTRAINT zk_row_id_key UNIQUE (row_id);
+ОШИБКА:  отношение "public.zk" не существует
+ОПЕРАТОР:  ALTER TABLE ONLY public.owners_tel
+	    ADD CONSTRAINT "FK" FOREIGN KEY (fk_telephone_zk) REFERENCES public.zk(zk_id) ON UPDATE CASCADE ON DELETE CASCADE;
+ОШИБКА:  отношение "public.zk" не существует
+ОПЕРАТОР:  ALTER TABLE ONLY public.zk_links
+	    ADD CONSTRAINT row_id_1_zk FOREIGN KEY (row_id1) REFERENCES public.zk(row_id) ON UPDATE CASCADE ON DELETE CASCADE;
+ОШИБКА:  отношение "public.zk" не существует
+ОПЕРАТОР:  ALTER TABLE ONLY public.zk_links
+	    ADD CONSTRAINT row_id_2_zk FOREIGN KEY (row_id2) REFERENCES public.zk(row_id) ON UPDATE CASCADE ON DELETE CASCADE;
+ОШИБКА:  ошибка синтаксиса (примерное положение: "exsist") (символ 25)
+ОПЕРАТОР:  CREATE EXTENSION if not exsist uuid_generate;
+ОШИБКА:  ошибка синтаксиса (примерное положение: "exsists") (символ 25)
+ОПЕРАТОР:  CREATE EXTENSION if not exsists uuid_generate;
+ОШИБКА:  отношение "contacts" уже существует
+ОПЕРАТОР:  CREATE TABLE public.contacts (
+	    cl_telephone character varying(30),
+	    cl_info character varying(50),
+	    fk_cl_telephone integer NOT NULL,
+	    contact_list_id integer NOT NULL,
+	    oldnum boolean DEFAULT false,
+	    internum boolean DEFAULT false
+	);
+ОШИБКА:  отношение "contacts_contact_list_id_seq" уже существует
+ОПЕРАТОР:  CREATE SEQUENCE public.contacts_contact_list_id_seq
+	    START WITH 1
+	    INCREMENT BY 1
+	    NO MINVALUE
+	    NO MAXVALUE
+	    CACHE 1;
+ОШИБКА:  отношение "official_tel" уже существует
+ОПЕРАТОР:  CREATE TABLE public.official_tel (
+	    tel_num character varying(20),
+	    service_name character varying(25),
+	    of_t_id integer NOT NULL
+	);
+ОШИБКА:  отношение "official_tel_of_t_id_seq" уже существует
+ОПЕРАТОР:  CREATE SEQUENCE public.official_tel_of_t_id_seq
+	    START WITH 1
+	    INCREMENT BY 1
+	    NO MINVALUE
+	    NO MAXVALUE
+	    CACHE 1;
+ОШИБКА:  отношение "owners_tel" уже существует
+ОПЕРАТОР:  CREATE TABLE public.owners_tel (
+	    fk_telephone_zk integer,
+	    telephone_id integer NOT NULL,
+	    telephone_num character varying(30) NOT NULL,
+	    internum boolean DEFAULT false NOT NULL,
+	    oldnum boolean DEFAULT false
+	);
+ОШИБКА:  отношение "owners_tel_telephone_id_seq" уже существует
+ОПЕРАТОР:  CREATE SEQUENCE public.owners_tel_telephone_id_seq
+	    START WITH 1
+	    INCREMENT BY 1
+	    NO MINVALUE
+	    NO MAXVALUE
+	    CACHE 1;
+ОШИБКА:  отношение "zk_links" уже существует
+ОПЕРАТОР:  CREATE TABLE public.zk_links (
+	    row_id1 uuid,
+	    row_id2 uuid
+	);
+ОШИБКА:  отношение "zk_zk_id_seq" уже существует
+ОПЕРАТОР:  CREATE SEQUENCE public.zk_zk_id_seq
+	    START WITH 1
+	    INCREMENT BY 1
+	    NO MINVALUE
+	    NO MAXVALUE
+	    CACHE 1;
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_contact_list_id"
+ПОДРОБНОСТИ:  Ключ "(contact_list_id)=(141)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.contacts (cl_telephone, cl_info, fk_cl_telephone, contact_list_id, oldnum, internum) VALUES ('2344', 'asdqwe', 21, 141, true, false);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_contact_list_id"
+ПОДРОБНОСТИ:  Ключ "(contact_list_id)=(142)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.contacts (cl_telephone, cl_info, fk_cl_telephone, contact_list_id, oldnum, internum) VALUES ('222', 'qq@', 213, 142, true, false);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_contact_list_id"
+ПОДРОБНОСТИ:  Ключ "(contact_list_id)=(143)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.contacts (cl_telephone, cl_info, fk_cl_telephone, contact_list_id, oldnum, internum) VALUES ('9236259', 'Вася', 244, 143, false, false);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_contact_list_id"
+ПОДРОБНОСТИ:  Ключ "(contact_list_id)=(19)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.contacts (cl_telephone, cl_info, fk_cl_telephone, contact_list_id, oldnum, internum) VALUES ('51', 'Евгенийqwe', 21, 19, true, false);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_contact_list_id"
+ПОДРОБНОСТИ:  Ключ "(contact_list_id)=(144)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.contacts (cl_telephone, cl_info, fk_cl_telephone, contact_list_id, oldnum, internum) VALUES ('9825583', 'ASDWEE12', 245, 144, false, false);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_contact_list_id"
+ПОДРОБНОСТИ:  Ключ "(contact_list_id)=(150)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.contacts (cl_telephone, cl_info, fk_cl_telephone, contact_list_id, oldnum, internum) VALUES ('89558835444', 'asdasd', 206, 150, false, true);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_contact_list_id"
+ПОДРОБНОСТИ:  Ключ "(contact_list_id)=(20)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.contacts (cl_telephone, cl_info, fk_cl_telephone, contact_list_id, oldnum, internum) VALUES ('89225475587', 'МАМА', 129, 20, false, true);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_contact_list_id"
+ПОДРОБНОСТИ:  Ключ "(contact_list_id)=(21)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.contacts (cl_telephone, cl_info, fk_cl_telephone, contact_list_id, oldnum, internum) VALUES ('71244166122', 'фвйкфф', 129, 21, false, false);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_contact_list_id"
+ПОДРОБНОСТИ:  Ключ "(contact_list_id)=(22)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.contacts (cl_telephone, cl_info, fk_cl_telephone, contact_list_id, oldnum, internum) VALUES ('89877022574', 'Контакт1', 129, 22, false, true);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_contact_list_id"
+ПОДРОБНОСТИ:  Ключ "(contact_list_id)=(23)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.contacts (cl_telephone, cl_info, fk_cl_telephone, contact_list_id, oldnum, internum) VALUES ('89023568974', 'Контакт3', 129, 23, true, false);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_contact_list_id"
+ПОДРОБНОСТИ:  Ключ "(contact_list_id)=(24)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.contacts (cl_telephone, cl_info, fk_cl_telephone, contact_list_id, oldnum, internum) VALUES ('77987897727', '134412', 130, 24, true, false);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_contact_list_id"
+ПОДРОБНОСТИ:  Ключ "(contact_list_id)=(25)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.contacts (cl_telephone, cl_info, fk_cl_telephone, contact_list_id, oldnum, internum) VALUES ('77895555555', 'Петр', 131, 25, true, false);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_contact_list_id"
+ПОДРОБНОСТИ:  Ключ "(contact_list_id)=(26)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.contacts (cl_telephone, cl_info, fk_cl_telephone, contact_list_id, oldnum, internum) VALUES ('79995555555', 'qweas', 132, 26, true, false);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_contact_list_id"
+ПОДРОБНОСТИ:  Ключ "(contact_list_id)=(167)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.contacts (cl_telephone, cl_info, fk_cl_telephone, contact_list_id, oldnum, internum) VALUES ('75255551555', 'ASDSS', 209, 167, false, true);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_contact_list_id"
+ПОДРОБНОСТИ:  Ключ "(contact_list_id)=(112)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.contacts (cl_telephone, cl_info, fk_cl_telephone, contact_list_id, oldnum, internum) VALUES ('71234444444', '', 210, 112, false, false);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_contact_list_id"
+ПОДРОБНОСТИ:  Ключ "(contact_list_id)=(139)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.contacts (cl_telephone, cl_info, fk_cl_telephone, contact_list_id, oldnum, internum) VALUES ('79888888188', 'фывйййй', 209, 139, false, false);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_contact_list_id"
+ПОДРОБНОСТИ:  Ключ "(contact_list_id)=(110)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.contacts (cl_telephone, cl_info, fk_cl_telephone, contact_list_id, oldnum, internum) VALUES ('5515', 'fsdfss', 21, 110, true, false);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_contact_list_id"
+ПОДРОБНОСТИ:  Ключ "(contact_list_id)=(114)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.contacts (cl_telephone, cl_info, fk_cl_telephone, contact_list_id, oldnum, internum) VALUES ('75255551555', NULL, 214, 114, false, false);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_of_t_id"
+ПОДРОБНОСТИ:  Ключ "(of_t_id)=(1)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.official_tel (tel_num, service_name, of_t_id) VALUES ('8(499)-720-56-22', 'Главное отделение ФСБ', 1);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_of_t_id"
+ПОДРОБНОСТИ:  Ключ "(of_t_id)=(6)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.official_tel (tel_num, service_name, of_t_id) VALUES ('131312', 'qaxx', 6);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_of_t_id"
+ПОДРОБНОСТИ:  Ключ "(of_t_id)=(7)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.official_tel (tel_num, service_name, of_t_id) VALUES ('41223334', 'ASDQEQWE', 7);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(129)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (64, 129, '71212555555', false, false);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(130)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (64, 130, '79148855887', false, false);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(131)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (64, 131, '76178888888', false, true);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(132)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (64, 132, '71255123333', true, false);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(424)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (203, 424, '4769078', false, true);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(425)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (203, 425, '4944545', false, true);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(426)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (203, 426, '4940001', false, true);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(427)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (203, 427, '4940102', false, true);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(245)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (8, 245, '89526809612', true, false);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(428)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (203, 428, '4940103', false, true);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(252)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (8, 252, '89160654671', false, false);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(429)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (204, 429, '100', false, true);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(430)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (204, 430, '200', false, true);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(209)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (26, 209, '79885547777', false, NULL);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(431)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (204, 431, '500', false, true);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(432)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (205, 432, '1001111', false, true);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(433)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (205, 433, '1001212', false, true);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(434)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (205, 434, '1001515', false, true);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(210)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (10, 210, '71222222222', false, NULL);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(435)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (206, 435, '4944893', false, true);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(436)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (206, 436, '4944893', false, true);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(437)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (207, 437, '100', false, true);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(438)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (207, 438, '101', false, true);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(439)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (208, 439, '4944893', false, true);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(440)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (208, 440, '4944895', false, true);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(441)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (210, 441, '2636020', false, true);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(214)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (11, 214, '71313333333', false, NULL);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(442)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (210, 442, '2675434', false, true);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(443)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (211, 443, '4944893', false, true);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(444)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (211, 444, '6020', false, true);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(445)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (211, 445, '4940005', false, true);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(446)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (212, 446, '2366021', false, true);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(447)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (213, 447, '2636202', false, true);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(448)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (214, 448, '1234567', false, true);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(449)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (215, 449, '1234567', false, true);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(450)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (216, 450, '9012345', false, true);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(451)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (217, 451, '1238990', false, true);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(452)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (218, 452, '2367989', false, true);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(453)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (219, 453, '3456789', false, true);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(454)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (220, 454, '2636202', false, true);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(455)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (221, 455, '2636020', false, true);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(456)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (221, 456, '2675434', false, true);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(47)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (26, 47, '72222222222', false, NULL);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(48)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (26, 48, '73333333333', false, NULL);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(50)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (26, 50, '79999999999', false, NULL);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(206)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (7, 206, '78520000102', false, false);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(21)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (7, 21, '79160654671', false, false);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(242)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (7, 242, '19165205522', false, NULL);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(243)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (7, 243, '29160654671', true, false);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(182)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (45, 182, '79888888188', false, NULL);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(213)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (7, 213, '76666666212', false, false);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(244)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (10, 244, '89152583024', false, NULL);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(253)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (11, 253, '89160654671', false, NULL);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(254)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (11, 254, '71257777777', false, false);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(255)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (11, 255, '71255123333', true, NULL);
+ОШИБКА:  таблица "contacts" не может иметь несколько первичных ключей
+ОПЕРАТОР:  ALTER TABLE ONLY public.contacts
+	    ADD CONSTRAINT "PK_contact_list_id" PRIMARY KEY (contact_list_id);
+ОШИБКА:  таблица "official_tel" не может иметь несколько первичных ключей
+ОПЕРАТОР:  ALTER TABLE ONLY public.official_tel
+	    ADD CONSTRAINT "PK_of_t_id" PRIMARY KEY (of_t_id);
+ОШИБКА:  таблица "owners_tel" не может иметь несколько первичных ключей
+ОПЕРАТОР:  ALTER TABLE ONLY public.owners_tel
+	    ADD CONSTRAINT "PK_telephone_id" PRIMARY KEY (telephone_id);
+ОШИБКА:  ограничение "fk" для отношения "contacts" уже существует
+ОПЕРАТОР:  ALTER TABLE ONLY public.contacts
+	    ADD CONSTRAINT fk FOREIGN KEY (fk_cl_telephone) REFERENCES public.owners_tel(telephone_id) ON UPDATE CASCADE ON DELETE CASCADE;
+ОШИБКА:  ошибка синтаксиса (примерное положение: "SHOW") (символ 25)
+ОПЕРАТОР:  PREPARE qpsqlpstmt_1 AS SHOW client_encoding;
+ОШИБКА:  ошибка синтаксиса в конце (символ 9)
+ОПЕРАТОР:  EXECUTE 
+���������:  ������� ������ �� ������� ����������
+���������:  ���������� ���� �������� ����������
+ВАЖНО:  закрытие подключения по команде администратора
+���������:  ������� ������� ����������� �����������
+���������:  ����������
+���������:  ������� �� ���������
+���������:  ������� �� ���� ���������: 2020-01-06 23:53:17 MSK
+���������:  ������ �� ������������ ���������������� ������ ��������
+���������:  ������� �� ������ ��������� �����������
+���������:  ������� ������� ����������� ������
+ОШИБКА:  функция public.uuid_generate_v1() не существует
+ПОДСКАЗКА:  Функция с данными именем и типами аргументов не найдена. Возможно, вам следует добавить явные приведения типов.
+ОПЕРАТОР:  CREATE TABLE public.zk (
+	    lastname character varying(20),
+	    name character varying(10),
+	    mid_name character varying(20),
+	    birth_date date,
+	    reg_city character varying(20),
+	    reg_street character varying(20),
+	    reg_home character varying(5),
+	    reg_corp character varying(5),
+	    reg_flat character varying(5),
+	    liv_city character varying(20),
+	    liv_street character varying(20),
+	    liv_home character varying(5),
+	    liv_corp character varying(5),
+	    liv_flat character varying(5),
+	    dop_info character varying(500),
+	    check_for character varying(25),
+	    zk_id integer NOT NULL,
+	    date_upd character varying(20),
+	    date_add date,
+	    time_add character varying(10),
+	    linked_id character varying(50),
+	    row_id uuid DEFAULT public.uuid_generate_v1()
+	);
+ОШИБКА:  отношение "public.zk" не существует
+ОПЕРАТОР:  ALTER TABLE public.zk OWNER TO postgres;
+ОШИБКА:  отношение "public.zk" не существует (символ 99)
+ОПЕРАТОР:  CREATE VIEW public.customer_golutvin AS
+	 SELECT zk.lastname,
+	    zk.name,
+	    zk.mid_name
+	   FROM public.zk
+	  WHERE ((zk.reg_city)::text = 'Москва'::text);
+ОШИБКА:  отношение "public.customer_golutvin" не существует
+ОПЕРАТОР:  ALTER TABLE public.customer_golutvin OWNER TO postgres;
+ОШИБКА:  отношение "public.zk" не существует
+ОПЕРАТОР:  ALTER SEQUENCE public.zk_zk_id_seq OWNED BY public.zk.zk_id;
+ОШИБКА:  отношение "public.zk" не существует
+ОПЕРАТОР:  ALTER TABLE ONLY public.zk ALTER COLUMN zk_id SET DEFAULT nextval('public.zk_zk_id_seq'::regclass);
+ОШИБКА:  отношение "public.zk" не существует (символ 13)
+ОПЕРАТОР:  INSERT INTO public.zk (lastname, name, mid_name, birth_date, reg_city, reg_street, reg_home, reg_corp, reg_flat, liv_city, liv_street, liv_home, liv_corp, liv_flat, dop_info, check_for, zk_id, date_upd, date_add, time_add, linked_id, row_id) VALUES ('Друг два', 'Имя2', 'О2', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Кличка: ', NULL, 746, NULL, NULL, NULL, NULL, '7d8a3792-2757-11ea-912e-4b7a84f604f9');
+ОШИБКА:  отношение "public.zk" не существует (символ 13)
+ОПЕРАТОР:  INSERT INTO public.zk (lastname, name, mid_name, birth_date, reg_city, reg_street, reg_home, reg_corp, reg_flat, liv_city, liv_street, liv_home, liv_corp, liv_flat, dop_info, check_for, zk_id, date_upd, date_add, time_add, linked_id, row_id) VALUES ('Виноградова', 'Мария', 'Валерьевна', NULL, 'Г. Москва', 'Вилиса Лациса', '11', '4', '239', NULL, NULL, NULL, NULL, NULL, 'OLD Пример номер 1.
+	Строка 2.
+	Строка 3.     Пробелы.; Кат.:Преподаватель; Дат: 1.01.2019; Мест:Архив ГУВД; Кем: РОВД Северное Тушино; Прич:Тестирование системы;, Кличка:Машук', NULL, 747, NULL, NULL, NULL, NULL, '8a5659c4-2757-11ea-912f-f3f04d4c6e81');
+ОШИБКА:  отношение "public.zk" не существует (символ 13)
+ОПЕРАТОР:  INSERT INTO public.zk (lastname, name, mid_name, birth_date, reg_city, reg_street, reg_home, reg_corp, reg_flat, liv_city, liv_street, liv_home, liv_corp, liv_flat, dop_info, check_for, zk_id, date_upd, date_add, time_add, linked_id, row_id) VALUES ('Белоусова', 'Валентина', 'Ивановна', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Кличка: Мама', NULL, 748, NULL, NULL, NULL, NULL, '8a5743fc-2757-11ea-9130-2782643cad21');
+ОШИБКА:  отношение "public.zk" не существует (символ 13)
+ОПЕРАТОР:  INSERT INTO public.zk (lastname, name, mid_name, birth_date, reg_city, reg_street, reg_home, reg_corp, reg_flat, liv_city, liv_street, liv_home, liv_corp, liv_flat, dop_info, check_for, zk_id, date_upd, date_add, time_add, linked_id, row_id) VALUES ('Папшев', 'Игорь', 'Степанович', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Кличка: Коллега', NULL, 749, NULL, NULL, NULL, NULL, '8a576b16-2757-11ea-9131-c7773929e35d');
+ОШИБКА:  отношение "public.zk" не существует (символ 13)
+ОПЕРАТОР:  INSERT INTO public.zk (lastname, name, mid_name, birth_date, reg_city, reg_street, reg_home, reg_corp, reg_flat, liv_city, liv_street, liv_home, liv_corp, liv_flat, dop_info, check_for, zk_id, date_upd, date_add, time_add, linked_id, row_id) VALUES ('Кузнецова', 'Нина', 'Марковна', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Кличка: Подруга', NULL, 750, NULL, NULL, NULL, NULL, '8a579226-2757-11ea-9132-4f7d8fab64b2');
+ОШИБКА:  отношение "public.zk" не существует (символ 13)
+ОПЕРАТОР:  INSERT INTO public.zk (lastname, name, mid_name, birth_date, reg_city, reg_street, reg_home, reg_corp, reg_flat, liv_city, liv_street, liv_home, liv_corp, liv_flat, dop_info, check_for, zk_id, date_upd, date_add, time_add, linked_id, row_id) VALUES ('Ivanov', 'Ivan', 'Ivanovich', NULL, 'Mos', 'vlatisa', '11', '4', '239', NULL, NULL, NULL, NULL, NULL, 'OLD dop info
+	line 2; Кат.:kategory; Дат: 1.2.2003; Мест:mesto; Кем: kem; Прич:povod;, Кличка:koko', NULL, 751, NULL, NULL, NULL, NULL, '8bac6e8a-2757-11ea-9133-5f8b94650d5e');
+ОШИБКА:  отношение "public.zk" не существует (символ 13)
+ОПЕРАТОР:  INSERT INTO public.zk (lastname, name, mid_name, birth_date, reg_city, reg_street, reg_home, reg_corp, reg_flat, liv_city, liv_street, liv_home, liv_corp, liv_flat, dop_info, check_for, zk_id, date_upd, date_add, time_add, linked_id, row_id) VALUES ('abonent1', 'ima 1', 'o1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Кличка: klich-1', NULL, 752, NULL, NULL, NULL, NULL, '8bacbd22-2757-11ea-9134-9f4f7f37905c');
+ОШИБКА:  отношение "public.zk" не существует (символ 13)
+ОПЕРАТОР:  INSERT INTO public.zk (lastname, name, mid_name, birth_date, reg_city, reg_street, reg_home, reg_corp, reg_flat, liv_city, liv_street, liv_home, liv_corp, liv_flat, dop_info, check_for, zk_id, date_upd, date_add, time_add, linked_id, row_id) VALUES ('Друг 1', 'Имя 1', 'О1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Кличка: Вован', NULL, 753, NULL, NULL, NULL, NULL, '64b6d36a-25c7-11ea-beae-1b201684aeba');
+ОШИБКА:  отношение "public.zk" не существует (символ 13)
+ОПЕРАТОР:  INSERT INTO public.zk (lastname, name, mid_name, birth_date, reg_city, reg_street, reg_home, reg_corp, reg_flat, liv_city, liv_street, liv_home, liv_corp, liv_flat, dop_info, check_for, zk_id, date_upd, date_add, time_add, linked_id, row_id) VALUES ('Ivanov', 'Иван', 'Иванович', NULL, 'Москва', 'Улица улица', '1', '2', '3', NULL, NULL, NULL, NULL, NULL, 'OLD доп инфо
+	доп инфо 2; Кат.:Категория; Дат: 1.2.2017; Мест:Место хранения; Кем: Кем изъята; Прич:Причина;, Кличка:Кличка', NULL, 754, NULL, '2019-12-26', NULL, NULL, '67086668-27ef-11ea-b9bd-33b7641872e2');
+ОШИБКА:  отношение "public.zk" не существует (символ 13)
+ОПЕРАТОР:  INSERT INTO public.zk (lastname, name, mid_name, birth_date, reg_city, reg_street, reg_home, reg_corp, reg_flat, liv_city, liv_street, liv_home, liv_corp, liv_flat, dop_info, check_for, zk_id, date_upd, date_add, time_add, linked_id, row_id) VALUES ('Друг 1', 'Имя 1', 'О1', NULL, '', '', '', '', '', '', '', '', '', '', 'Кличка: Вован', '', 755, NULL, '2019-12-26', NULL, NULL, '6fc9867e-27ef-11ea-b9c0-93cd8c264ed4');
+ОШИБКА:  отношение "public.zk" не существует (символ 13)
+ОПЕРАТОР:  INSERT INTO public.zk (lastname, name, mid_name, birth_date, reg_city, reg_street, reg_home, reg_corp, reg_flat, liv_city, liv_street, liv_home, liv_corp, liv_flat, dop_info, check_for, zk_id, date_upd, date_add, time_add, linked_id, row_id) VALUES ('Ivanov', 'Ivan', 'Ivanovich', '1997-11-23', 'Mos', 'vlatisa', '11', '4', '239', '', '', '', '', '', 'OLD dop info
+	line 2; Кат.:kategory; Дат: 1.2.2003; Мест:mesto; Кем: kem; Прич:povod;, Кличка:koko', '', 744, '2019-12-28 21:41:25', NULL, NULL, NULL, '7d86b496-2757-11ea-912c-277a54a48667');
+ОШИБКА:  отношение "public.zk" не существует (символ 13)
+ОПЕРАТОР:  INSERT INTO public.zk (lastname, name, mid_name, birth_date, reg_city, reg_street, reg_home, reg_corp, reg_flat, liv_city, liv_street, liv_home, liv_corp, liv_flat, dop_info, check_for, zk_id, date_upd, date_add, time_add, linked_id, row_id) VALUES ('123qwe', 'qwe', 'asd', '1995-12-11', '', '', '', '', '', '', '', '', '', '', '', '', 756, NULL, '2019-12-28', '21:41:50', NULL, 'b5f41318-29a1-11ea-8ec4-ff6ba6104f87');
+ОШИБКА:  отношение "public.zk" не существует
+ОПЕРАТОР:  ALTER TABLE ONLY public.zk
+	    ADD CONSTRAINT "PK_zk_id" PRIMARY KEY (zk_id);
+ОШИБКА:  отношение "public.zk" не существует
+ОПЕРАТОР:  ALTER TABLE ONLY public.zk
+	    ADD CONSTRAINT zk_row_id_key UNIQUE (row_id);
+ОШИБКА:  отношение "public.zk" не существует
+ОПЕРАТОР:  ALTER TABLE ONLY public.owners_tel
+	    ADD CONSTRAINT "FK" FOREIGN KEY (fk_telephone_zk) REFERENCES public.zk(zk_id) ON UPDATE CASCADE ON DELETE CASCADE;
+ОШИБКА:  отношение "public.zk" не существует
+ОПЕРАТОР:  ALTER TABLE ONLY public.zk_links
+	    ADD CONSTRAINT row_id_1_zk FOREIGN KEY (row_id1) REFERENCES public.zk(row_id) ON UPDATE CASCADE ON DELETE CASCADE;
+ОШИБКА:  отношение "public.zk" не существует
+ОПЕРАТОР:  ALTER TABLE ONLY public.zk_links
+	    ADD CONSTRAINT row_id_2_zk FOREIGN KEY (row_id2) REFERENCES public.zk(row_id) ON UPDATE CASCADE ON DELETE CASCADE;
+ОШИБКА:  отношение "contacts" уже существует
+ОПЕРАТОР:  CREATE TABLE public.contacts (
+	    cl_telephone character varying(30),
+	    cl_info character varying(50),
+	    fk_cl_telephone integer NOT NULL,
+	    contact_list_id integer NOT NULL,
+	    oldnum boolean DEFAULT false,
+	    internum boolean DEFAULT false
+	);
+ОШИБКА:  отношение "contacts_contact_list_id_seq" уже существует
+ОПЕРАТОР:  CREATE SEQUENCE public.contacts_contact_list_id_seq
+	    START WITH 1
+	    INCREMENT BY 1
+	    NO MINVALUE
+	    NO MAXVALUE
+	    CACHE 1;
+ОШИБКА:  отношение "official_tel" уже существует
+ОПЕРАТОР:  CREATE TABLE public.official_tel (
+	    tel_num character varying(20),
+	    service_name character varying(25),
+	    of_t_id integer NOT NULL
+	);
+ОШИБКА:  отношение "official_tel_of_t_id_seq" уже существует
+ОПЕРАТОР:  CREATE SEQUENCE public.official_tel_of_t_id_seq
+	    START WITH 1
+	    INCREMENT BY 1
+	    NO MINVALUE
+	    NO MAXVALUE
+	    CACHE 1;
+ОШИБКА:  отношение "owners_tel" уже существует
+ОПЕРАТОР:  CREATE TABLE public.owners_tel (
+	    fk_telephone_zk integer,
+	    telephone_id integer NOT NULL,
+	    telephone_num character varying(30) NOT NULL,
+	    internum boolean DEFAULT false NOT NULL,
+	    oldnum boolean DEFAULT false
+	);
+ОШИБКА:  отношение "owners_tel_telephone_id_seq" уже существует
+ОПЕРАТОР:  CREATE SEQUENCE public.owners_tel_telephone_id_seq
+	    START WITH 1
+	    INCREMENT BY 1
+	    NO MINVALUE
+	    NO MAXVALUE
+	    CACHE 1;
+ОШИБКА:  отношение "zk_links" уже существует
+ОПЕРАТОР:  CREATE TABLE public.zk_links (
+	    row_id1 uuid,
+	    row_id2 uuid
+	);
+ОШИБКА:  отношение "zk_zk_id_seq" уже существует
+ОПЕРАТОР:  CREATE SEQUENCE public.zk_zk_id_seq
+	    START WITH 1
+	    INCREMENT BY 1
+	    NO MINVALUE
+	    NO MAXVALUE
+	    CACHE 1;
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_contact_list_id"
+ПОДРОБНОСТИ:  Ключ "(contact_list_id)=(708)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.contacts (cl_telephone, cl_info, fk_cl_telephone, contact_list_id, oldnum, internum) VALUES ('100', 'abonent1 ima 1 o1 Кличка: klich-1', 1507, 708, false, true);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_contact_list_id"
+ПОДРОБНОСТИ:  Ключ "(contact_list_id)=(709)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.contacts (cl_telephone, cl_info, fk_cl_telephone, contact_list_id, oldnum, internum) VALUES ('101', 'abonent1 ima 1 o1 Кличка: klich-1', 1507, 709, false, true);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_contact_list_id"
+ПОДРОБНОСТИ:  Ключ "(contact_list_id)=(710)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.contacts (cl_telephone, cl_info, fk_cl_telephone, contact_list_id, oldnum, internum) VALUES ('4956751', 'Белоусова Валентина Ивановна Кличка: Мама', 1515, 710, true, false);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_contact_list_id"
+ПОДРОБНОСТИ:  Ключ "(contact_list_id)=(711)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.contacts (cl_telephone, cl_info, fk_cl_telephone, contact_list_id, oldnum, internum) VALUES ('1074420', 'Белоусова Валентина Ивановна Кличка: Мама', 1515, 711, true, false);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_contact_list_id"
+ПОДРОБНОСТИ:  Ключ "(contact_list_id)=(712)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.contacts (cl_telephone, cl_info, fk_cl_telephone, contact_list_id, oldnum, internum) VALUES ('2636020', 'Папшев Игорь Степанович Кличка: Коллега', 1515, 712, true, false);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_contact_list_id"
+ПОДРОБНОСТИ:  Ключ "(contact_list_id)=(713)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.contacts (cl_telephone, cl_info, fk_cl_telephone, contact_list_id, oldnum, internum) VALUES ('2675434', 'Папшев Игорь Степанович Кличка: Коллега', 1515, 713, true, false);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_contact_list_id"
+ПОДРОБНОСТИ:  Ключ "(contact_list_id)=(714)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.contacts (cl_telephone, cl_info, fk_cl_telephone, contact_list_id, oldnum, internum) VALUES ('3795637', 'Кузнецова Нина Марковна Кличка: Подруга', 1515, 714, true, false);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_contact_list_id"
+ПОДРОБНОСТИ:  Ключ "(contact_list_id)=(715)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.contacts (cl_telephone, cl_info, fk_cl_telephone, contact_list_id, oldnum, internum) VALUES ('3794545', 'Кузнецова Нина Марковна Кличка: Подруга', 1515, 715, true, false);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_contact_list_id"
+ПОДРОБНОСТИ:  Ключ "(contact_list_id)=(716)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.contacts (cl_telephone, cl_info, fk_cl_telephone, contact_list_id, oldnum, internum) VALUES ('100', 'abonent1 ima 1 o1 Кличка: klich-1', 1524, 716, false, true);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_contact_list_id"
+ПОДРОБНОСТИ:  Ключ "(contact_list_id)=(717)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.contacts (cl_telephone, cl_info, fk_cl_telephone, contact_list_id, oldnum, internum) VALUES ('101', 'abonent1 ima 1 o1 Кличка: klich-1', 1524, 717, false, true);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_contact_list_id"
+ПОДРОБНОСТИ:  Ключ "(contact_list_id)=(718)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.contacts (cl_telephone, cl_info, fk_cl_telephone, contact_list_id, oldnum, internum) VALUES ('100', 'Друг 1 Имя 1 О1 Кличка: Вован', 1531, 718, false, true);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_contact_list_id"
+ПОДРОБНОСТИ:  Ключ "(contact_list_id)=(719)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.contacts (cl_telephone, cl_info, fk_cl_telephone, contact_list_id, oldnum, internum) VALUES ('200', 'Друг 1 Имя 1 О1 Кличка: Вован', 1531, 719, false, true);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_contact_list_id"
+ПОДРОБНОСТИ:  Ключ "(contact_list_id)=(720)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.contacts (cl_telephone, cl_info, fk_cl_telephone, contact_list_id, oldnum, internum) VALUES ('500', 'Друг 1 Имя 1 О1 Кличка: Вован', 1531, 720, false, true);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_contact_list_id"
+ПОДРОБНОСТИ:  Ключ "(contact_list_id)=(721)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.contacts (cl_telephone, cl_info, fk_cl_telephone, contact_list_id, oldnum, internum) VALUES ('1001111', 'Друг два Имя2 О2 Кличка: ', 1531, 721, true, false);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_contact_list_id"
+ПОДРОБНОСТИ:  Ключ "(contact_list_id)=(722)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.contacts (cl_telephone, cl_info, fk_cl_telephone, contact_list_id, oldnum, internum) VALUES ('1001212', 'Друг два Имя2 О2 Кличка: ', 1531, 722, true, false);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_contact_list_id"
+ПОДРОБНОСТИ:  Ключ "(contact_list_id)=(723)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.contacts (cl_telephone, cl_info, fk_cl_telephone, contact_list_id, oldnum, internum) VALUES ('1001515', 'Друг два Имя2 О2 Кличка: ', 1531, 723, true, false);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_of_t_id"
+ПОДРОБНОСТИ:  Ключ "(of_t_id)=(42)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.official_tel (tel_num, service_name, of_t_id) VALUES ('4995203699', 'Главное отделение ВТБ', 42);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_of_t_id"
+ПОДРОБНОСТИ:  Ключ "(of_t_id)=(43)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.official_tel (tel_num, service_name, of_t_id) VALUES ('4997971658', 'фывфыв', 43);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_of_t_id"
+ПОДРОБНОСТИ:  Ключ "(of_t_id)=(45)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.official_tel (tel_num, service_name, of_t_id) VALUES ('4956602399', 'Служба такси', 45);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(1507)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (744, 1507, '4944893', false, true);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(1508)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (744, 1508, '4944893', false, true);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(1512)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (746, 1512, '1001111', false, true);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(1513)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (746, 1513, '1001212', false, true);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(1514)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (746, 1514, '1001515', false, true);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(1515)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (747, 1515, '9032888673', true, false);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(1516)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (747, 1516, '9031074420', true, false);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(1517)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (747, 1517, '4944893', false, true);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(1518)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (748, 1518, '4956751', false, true);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(1519)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (748, 1519, '1074420', false, true);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(1520)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (749, 1520, '2636020', false, true);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(1521)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (749, 1521, '2675434', false, true);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(1522)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (750, 1522, '3795637', false, true);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(1523)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (750, 1523, '3794545', false, true);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(1524)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (751, 1524, '4944893', false, true);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(1525)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (751, 1525, '4944893', false, true);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(1526)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (752, 1526, '100', true, false);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(1527)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (752, 1527, '101', true, false);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(1528)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (753, 1528, '100', true, false);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(1529)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (753, 1529, '200', true, false);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(1530)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (753, 1530, '500', true, false);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(1531)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (754, 1531, '4769078', false, true);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(1532)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (754, 1532, '4944545', false, true);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(1533)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (754, 1533, '4940001', false, true);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(1534)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (754, 1534, '4940102', false, true);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(1535)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (754, 1535, '4940103', false, true);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(1536)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (755, 1536, '100', true, false);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(1537)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (755, 1537, '200', true, false);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "PK_telephone_id"
+ПОДРОБНОСТИ:  Ключ "(telephone_id)=(1538)" уже существует.
+ОПЕРАТОР:  INSERT INTO public.owners_tel (fk_telephone_zk, telephone_id, telephone_num, internum, oldnum) VALUES (755, 1538, '500', true, false);
+ОШИБКА:  таблица "contacts" не может иметь несколько первичных ключей
+ОПЕРАТОР:  ALTER TABLE ONLY public.contacts
+	    ADD CONSTRAINT "PK_contact_list_id" PRIMARY KEY (contact_list_id);
+ОШИБКА:  таблица "official_tel" не может иметь несколько первичных ключей
+ОПЕРАТОР:  ALTER TABLE ONLY public.official_tel
+	    ADD CONSTRAINT "PK_of_t_id" PRIMARY KEY (of_t_id);
+ОШИБКА:  таблица "owners_tel" не может иметь несколько первичных ключей
+ОПЕРАТОР:  ALTER TABLE ONLY public.owners_tel
+	    ADD CONSTRAINT "PK_telephone_id" PRIMARY KEY (telephone_id);
+ОШИБКА:  ограничение "fk" для отношения "contacts" уже существует
+ОПЕРАТОР:  ALTER TABLE ONLY public.contacts
+	    ADD CONSTRAINT fk FOREIGN KEY (fk_cl_telephone) REFERENCES public.owners_tel(telephone_id) ON UPDATE CASCADE ON DELETE CASCADE;
+ОШИБКА:  ошибка синтаксиса (примерное положение: "SHOW") (символ 25)
+ОПЕРАТОР:  PREPARE qpsqlpstmt_1 AS SHOW client_encoding;
+ОШИБКА:  ошибка синтаксиса в конце (символ 9)
+ОПЕРАТОР:  EXECUTE 
+СООБЩЕНИЕ:  не удалось получить данные от клиента: An existing connection was forcibly closed by the remote host.
+	
+���������:  ������� ������ �� ������� ����������
+���������:  ���������� ���� �������� ����������
+���������:  ������� ������� ����������� �����������
+ВАЖНО:  закрытие подключения по команде администратора
+���������:  ����������
+���������:  ������� �� ���������
+���������:  ������� �� ���� ���������: 2020-01-06 23:57:01 MSK
+���������:  ������ �� ������������ ���������������� ������ ��������
+���������:  ������� �� ������ ��������� �����������
+���������:  ������� ������� ����������� ������
+ОШИБКА:  ошибка синтаксиса (примерное положение: "SHOW") (символ 25)
+ОПЕРАТОР:  PREPARE qpsqlpstmt_1 AS SHOW client_encoding;
+ОШИБКА:  ошибка синтаксиса в конце (символ 9)
+ОПЕРАТОР:  EXECUTE 
+СООБЩЕНИЕ:  не удалось получить данные от клиента: An existing connection was forcibly closed by the remote host.
+	
+ОШИБКА:  ошибка синтаксиса (примерное положение: "SHOW") (символ 25)
+ОПЕРАТОР:  PREPARE qpsqlpstmt_1 AS SHOW client_encoding;
+ОШИБКА:  ошибка синтаксиса в конце (символ 9)
+ОПЕРАТОР:  EXECUTE 
+СООБЩЕНИЕ:  не удалось получить данные от клиента: An existing connection was forcibly closed by the remote host.
+	
+���������:  ������� ����� ���������� (PID 8056) ��� ������� ����������� 0xC000013A
+���������:  �������� ����� ������������������ �������� ����� �� ���������� C-����� "ntstatus.h"
+���������:  ������� ������� ����������� (PID 8556) ��� ������� ����������� 0xC000013A
+���������:  �������� ����� ������������������ �������� ����� �� ���������� C-����� "ntstatus.h"
+���������:  ���������� ���� ��������� �������� ��������� ���������
+���������:  ��� ��������� �������� ���������... �����������������
+���������:  ������ ������� �� ���� ��������; ��������� ������ ������: 2020-01-07 00:02:06 MSK
+���������:  ������� �� ���� ����������� ��������; ������������ �������������� ��������������
+���������:  �������� ����� ������ �� �������� 0/1779D00
+���������:  ������ REDO �� ���������
+���������:  ������ �� ������������ ���������������� ������ ��������
+���������:  ������� �� ������ ��������� �����������
+^C���������:  ������� ������� ����������� ������
